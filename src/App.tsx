@@ -3,19 +3,21 @@ import Sidebar from './Sidebar';
 import Feed from './Feed';
 import Widgets from './Widgets';
 
-import './App.css';
+import GlobalStyle from './styles/GlobalStyles';
 
 const App = () => {
   return (
-    <div className="app">
-      <h1>Twitter ReactJs</h1>
+    <>
+      <div className="app">
+        <h1>Twitter ReactJs</h1>
+        <Sidebar />
 
-      <Sidebar />
+        <Feed />
 
-      <Feed />
-
-      <Widgets />
-    </div>
+        <Widgets />
+      </div>
+      <GlobalStyle />
+    </>
   );
 }
 
