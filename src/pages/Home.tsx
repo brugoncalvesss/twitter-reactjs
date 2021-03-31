@@ -1,12 +1,17 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { UserContext } from '../UserContext';
+import TweetForm from '../components/TweetForm';
 
 const Home = () => {
+
+  const { user } = useContext(UserContext);
+
   return (
-    <>
-      <div className="app">
-        <h1>Home page</h1>
-      </div>
-    </>
+    <div className="app">
+      <h1>Home</h1>
+      <pre>{JSON.stringify(user)}</pre>
+      <TweetForm />
+    </div>
   );
 }
 
