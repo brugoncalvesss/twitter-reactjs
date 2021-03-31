@@ -16,8 +16,11 @@ const Routes = () => {
   const [user, setUser] = useState({});
 
   useEffect(() => {
+
+    // TODO: receive data user
+
     const data = {
-      user: 'brugoncalvesss',
+      userName: 'brugoncalvesss',
       userId: '5effe0bd-98a6-41fc-a861-1ff1610ddabb'
     };
     setUser(data);

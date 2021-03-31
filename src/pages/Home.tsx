@@ -10,7 +10,7 @@ const Home = () => {
     <div className="app">
       <h1>Home</h1>
       <pre>{JSON.stringify(user)}</pre>
-      <TweetForm />
+      <TweetForm user={user} />
     </div>
   );
 }

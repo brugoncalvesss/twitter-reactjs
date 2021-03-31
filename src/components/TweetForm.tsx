@@ -1,13 +1,13 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
 
-const TweetForm = () => {
+const TweetForm = (props: any) => {
 
   const [message, setMessage] = useState('');
 
   const handleSubmit = (event: any) => {
     event.preventDefault();
 
-    console.log('Um nome foi enviado: ' + message);
+    // TODO: save tweet
   }
 
   return (
