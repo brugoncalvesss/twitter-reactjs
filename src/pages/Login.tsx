@@ -3,12 +3,12 @@ import { UserContext } from '../UserContext';
 
 const Login = () => {
 
-  const message = useContext(UserContext);
+  const { user } = useContext(UserContext);
 
   return (
     <div className="app">
       <h1>Login</h1>
-      <p>{message}</p>
+      <pre>{JSON.stringify(user)}</pre>
     </div>
   );
 }
