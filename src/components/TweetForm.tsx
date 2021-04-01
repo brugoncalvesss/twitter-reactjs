@@ -1,7 +1,9 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
+import { UserContext } from '../UserContext';
 
 const TweetForm = (props: any) => {
 
+  const { user } = useContext(UserContext);
   const [message, setMessage] = useState('');
 
   const handleSubmit = (event: any) => {
@@ -15,13 +17,13 @@ const TweetForm = (props: any) => {
       <div>
         <textarea
           name="message"
-          placeholder="O que está acontecendo?"
+          placeholder="What's happening?"
           onChange={(e) => setMessage(e.target.value)}
         >
         </textarea>
       </div>
       <div>
-        <button type="submit" className="btn btn-primary">Tweetar</button>
+        <button type="submit" className="btn btn-primary">Tweet</button>
       </div>
     </form>
   );
