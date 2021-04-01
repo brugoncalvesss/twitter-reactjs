@@ -1,7 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { NavLink } from "react-router-dom";
+import TweetForm from '../components/TweetForm';
 
-const nav = () => {
+const Nav = () => {
+
+  const [display, setDisplay] = useState(false)
+
   return (
     <ul className="nav">
       <li className="nav-item">
@@ -14,9 +18,11 @@ const nav = () => {
         <NavLink to="/profile" activeClassName="active">
           Profile
         </NavLink>
+        <div onClick={() => {setDisplay(!display)}}>Tweet</div>
+        {display && <TweetForm />}
       </li>
     </ul>
   );
 }
 
-export default nav;
+export default Nav;

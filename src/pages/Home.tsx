@@ -1,18 +1,31 @@
-import React, { useContext } from 'react';
-import { UserContext } from '../UserContext';
-import TweetForm from '../components/TweetForm';
+import React, { useState, useEffect } from 'react'
+
+import data from '../data.json'
+import Tweet from '../components/Tweet'
 
 const Home = () => {
 
-  const { user } = useContext(UserContext);
+  const [tweets, setTweets] = useState([])
+
+  useEffect(() => {
+    // TODO: get tweets
+  }, [])
 
   return (
     <div className="app">
       <h1>Home</h1>
-      <pre>{JSON.stringify(user)}</pre>
-      <TweetForm />
+      {data && data.map((tweet, index) => (
+        <Tweet
+          key={index}
+          avatar={tweet.avatar}
+          author={tweet.author}
+          twitteruser={tweet.twitteruser}
+          posttime={tweet.posttime}
+          posttext={tweet.posttext}
+        />
+      ))}
     </div>
-  );
+  )
 }
 
-export default Home;
+export default Home
