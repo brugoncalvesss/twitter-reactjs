@@ -1,20 +1,15 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
-const Tweet = (
-  {
+const Tweet = ({ tweetData } : any) => {
+
+  const {
     avatar,
     author,
     twitteruser,
     posttime,
-    posttext
-  } : {
-    avatar: string,
-    author: string,
-    twitteruser: string,
-    posttime: string,
-    posttext: string
-  }
-) => {
+    posttext,
+  } = tweetData;
 
   return (
     <div className="d-flex">
@@ -32,6 +27,10 @@ const Tweet = (
       </div>
     </div>
   )
+}
+
+Tweet.propTypes = {
+  tweetData: PropTypes.object
 }
 
 export default Tweet

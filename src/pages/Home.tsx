@@ -17,11 +17,7 @@ const Home = () => {
       {data && data.map((tweet, index) => (
         <Tweet
           key={index}
-          avatar={tweet.avatar}
-          author={tweet.author}
-          twitteruser={tweet.twitteruser}
-          posttime={tweet.posttime}
-          posttext={tweet.posttext}
+          tweetData={tweet}
         />
       ))}
     </div>
